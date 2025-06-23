@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>لوحة تحكم المتاجر </title>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+  <h1>لوحة التحكم - متجرD4D </h1>
+
+   <!-- مربع البحث -->
+   <div class="search-container">
+    <input type="text" id="search" placeholder="ابحث عن متجر..." />
+  </div>
+
+  <div class="grid" id="store-container">
+    <!-- سيتم ملء البطاقات من JavaScript -->
+  </div>
+
+  <!-- مربع حوارى -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <h2>جاري تشغيل الاسكراب...</h2>
+      <div class="progress-container">
+        <div class="progress-bar" id="modal-progress-bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- رسالة تنبيه -->
+  <div class="toast" id="toast"><i class="fa fa-check-circle" style="font-size:25px"></i>&nbsp; تم الانتهاء من الاسكراب بنجاح</div>
+
+  <script src="Script.js"></script>
+</body>
+</html>
