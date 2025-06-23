@@ -1,7 +1,7 @@
 const stores = [
     "التميمي", "بندة", "كارفور", "نيستو", "المزرعة",
     "العثيم", "الراية", "لولو", "الدانوب", "بن داوود"
-  ];
+  ].sort((a, b) => a.localeCompare(b, 'ar'));
   
   const container = document.getElementById("store-container");
   const modal = document.getElementById("modal");
@@ -79,14 +79,22 @@ const stores = [
   document.getElementById('search').addEventListener('input', function () {
     const keyword = this.value.trim().toLowerCase();
     const cards = document.querySelectorAll('.card');
+    const noResults = document.getElementById('no-results');
+  
+    let anyVisible = false;
   
     cards.forEach(card => {
       const store = card.getAttribute('data-store').toLowerCase();
       if (store.includes(keyword)) {
         card.style.display = 'block';
+        anyVisible = true;
       } else {
         card.style.display = 'none';
       }
     });
+  
+    // إظهار أو إخفاء رسالة "لا توجد نتائج"
+    noResults.style.display = anyVisible ? 'none' : 'block';
   });
+  
   
